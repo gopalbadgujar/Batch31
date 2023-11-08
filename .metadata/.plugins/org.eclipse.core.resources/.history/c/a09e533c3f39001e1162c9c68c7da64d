@@ -1,0 +1,112 @@
+package com.serviceImpl;
+
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+import com.model.Account;
+import com.service.RBI;
+
+public class SBI implements RBI {
+
+	Scanner sc = new Scanner(System.in);
+	Account[] acArray = new Account[5];
+
+	public void createAccount() {
+		System.out.println("SBI bank is going to open an account ");
+		System.out.println("How Many Accounts You Want to add:");
+
+		int n = sc.nextInt();
+
+		for (int i = 0; i < n; i++) {
+			Account a = new Account();
+
+			System.out.println("FILL THE FOLLOWING DATA AS REQUIRED");
+
+			System.out.println("Enter Your Name: ");
+			String nameG = sc.nextLine();
+			a.setName(nameG);
+
+			System.out.println("Enter your aadhar number");
+			a.setAadharNo(sc.nextLong());
+
+			System.out.println("Account number");
+			a.setAccNo(sc.nextLong());
+
+			System.out.println("Pancard number");
+			a.setPanNumber(sc.next());
+
+			System.out.println("Initial account deposit is");
+			a.setAccountBalance(sc.nextDouble());
+
+			acArray[i] = a;
+			System.out.println("Your account has been created!!");
+
+		}
+	}
+
+	public void showAccountDetails() {
+		for (Account a : acArray) {
+			if (a != null) {
+
+				System.out.println("Name of person  : " + a.getName());
+				System.out.println("Aadhar number   : " + a.getAadharNo());
+				System.out.println("Account number  : " + a.getAccNo());
+				System.out.println("Pancard number  : " + a.getPanNumber());
+				System.out.println("Account Balance : " + a.getBalance());
+				System.out.println("\n");
+			}
+		}
+	}
+
+	public void depositMoney() {
+		System.out.println("Enter account number : ");
+		long a1 = sc.nextLong();
+
+		for (Account a : acArray) {// 0 1 2 3* 4*
+			if (a != null) {
+				if (a1 == a.getAccNo()) {
+					System.out.println("Enter the amount you want to deposit : ");
+//		double d = sc.nextDouble();
+					double td = a.getBalance() + sc.nextDouble();
+					a.setAccountBalance(td);
+					a.setAccountBalance(td);
+					System.out.println("Updated account balance : " + a.getBalance());
+				} else {
+					System.out.println("Enter valid account number!!");
+				}
+			}
+		}
+
+	}
+
+	@Override
+	public void withdrawalMoney() {
+		System.out.println("Enter account number : ");
+		double a2 = sc.nextDouble();
+
+		if (a2 == a.getAccountNo()) {
+			System.out.println("Enter the amount u want to withdraw : ");
+			double w = sc.nextDouble();
+			double tw = a.getAccountBlance() - w;
+			a.setAccountBlance(tw);
+
+			System.out.println("Updated account balance : " + a.getAccountBlance());
+		}
+
+		else {
+			System.out.println("Enter valid account number!!");
+		}
+	}
+
+	@Override
+	public void updateAccountDetails() {
+
+	}
+
+	@Override
+	public void displayBalance() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

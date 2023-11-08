@@ -1,0 +1,68 @@
+package com.set;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class New {
+//	class A {
+//		String a;
+//
+//		A(String a) {
+//			this.a = a;
+//		}
+//	}
+		public static void main(String[] args) {
+			TreeSet<String> ts = new TreeSet<String>();
+			ts.add("A");
+			ts.add("A");
+			System.out.println(ts);
+
+			System.out.println();
+			TreeSet<String> t = new TreeSet<String>();
+			System.out.print(t.add("A") + ", ");
+			System.out.print(t.add("A"));
+
+			System.out.println();
+			TreeSet<String> t1 = new TreeSet<String>();
+			System.out.print(t1.add("A") + ", ");
+			System.out.print(t1.add("B"));
+
+			System.out.println();
+			TreeSet<String> t2 = new TreeSet<String>();
+			System.out.print(t2.add("B") + ", ");
+			System.out.print(t2.add("B"));
+
+//			System.out.println();
+//			TreeSet<A> t3 = new TreeSet<A>();
+//			ts.add(new A("A"));
+//			ts.add(new A("Z"));
+//			ts.add(new A("L"));
+//			System.out.println(t3);
+			
+//			System.out.println();
+//			 TreeSet t4 = new TreeSet();
+//		      ts.add("a");
+//		      ts.add("A");
+//		      ts.add(new StringBuilder("Z"));
+//		      ts.add(new StringBuilder("c"));
+//		      ts.add(new StringBuilder("K"));
+//		      System.out.println(t4);
+			
+			
+			Set<Integer> set = new HashSet<>();
+			set.add(5);
+			set.add(10);
+			set.add(15);
+
+			for (int num : set) {
+			    set.remove(num);
+			}
+			System.out.println(set.size());
+			
+			
+			
+			
+		}
+
+	}

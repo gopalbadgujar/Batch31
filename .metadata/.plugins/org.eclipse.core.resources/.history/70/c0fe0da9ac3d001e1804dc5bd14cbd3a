@@ -1,0 +1,42 @@
+package com.set;
+
+import java.util.TreeSet;
+
+public class New {
+//	class A {
+//		String a;
+//
+//		A(String a) {
+//			this.a = a;
+//		}
+
+		public static void main(String[] args) {
+			TreeSet<String> ts = new TreeSet<String>();
+			ts.add("A");
+			ts.add("A");
+			System.out.println(ts);
+
+			System.out.println();
+			TreeSet<String> t = new TreeSet<String>();
+			System.out.print(t.add("A") + ", ");
+			System.out.print(t.add("A"));
+
+			System.out.println();
+			TreeSet<String> t1 = new TreeSet<String>();
+			System.out.print(t1.add("A") + ", ");
+			System.out.print(t1.add("B"));
+
+			System.out.println();
+			TreeSet<String> t2 = new TreeSet<String>();
+			System.out.print(t2.add("B") + ", ");
+			System.out.print(t2.add("B"));
+
+//			System.out.println();
+//			TreeSet<A> t3 = new TreeSet<A>();
+//			ts.add(new A("A"));
+//			ts.add(new A("Z"));
+//			ts.add(new A("L"));
+//			System.out.println(t3);
+		}
+
+	}

@@ -1,0 +1,50 @@
+package com.set;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class SetTypes {
+
+	public static void main(String[] args) {
+		
+		//LinkedHashSet
+		/*
+		 * Null value print at only once
+		 * avoid duplicate values
+		 */
+		Set<Integer> set = new LinkedHashSet<Integer>();
+		set.add(201);
+		set.add(202);
+		set.add(203);
+		set.add(201);
+		set.add(601);
+		set.add(201);
+		set.add(null);
+		set.add(null);
+	
+		System.out.println(set);
+
+		//TreeSet
+		/*
+		 * No Null value print
+		 * avoid duplicate values
+		 *  
+		 */
+		Set<Integer> set1= new TreeSet<Integer>();
+		set1.add(55);
+		set1.add(5);
+		set1.add(2);
+		set1.add(55);
+		set1.add(100);
+		set1.add(60);
+		set1.add(null);
+
+
+		
+		
+		
+	}
+	
+	
+}
